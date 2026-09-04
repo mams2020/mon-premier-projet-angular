@@ -1,0 +1,89 @@
+/* 📁 src/app/components/header/header.css */
+
+/* Conteneur principal */
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* conteneur de la navigation */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nom {
+  color: #ffd700;
+}
+
+.prenom {
+  color: white;
+}
+
+/* bouton du menu mobile */
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none; /* Caché sur desktop, visible sur mobile */
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #ffd700;
+}
+
+/* --- RESPONSIVE : Pour les écrans ≤ 768px (Mobile) --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* On affiche le bouton hamburger */
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #764ba2;
+    padding: 1rem;
+    flex-direction: column; /* ← Important pour affichage vertical */
+  }
+
+  .nav-menu.open {
+    display: flex; /* affiché quand isMenuOpen = true*/
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}

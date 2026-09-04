@@ -1,1 +1,22 @@
-<p>header works!</p>
+<header>
+  <div class="nav-container">
+    <!-- logo -->
+    <div class="logo">
+      <span class="nom">Mahmoud</span>
+      <span class="prenom">Diallo</span>
+    </div>
+
+    <!-- Bouton menu mobile -->
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+    <!-- Navigation : affiche le menu selon le signal -->
+
+    <nav class="nav-menu" [class.open]="isMenuOpen()">
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
